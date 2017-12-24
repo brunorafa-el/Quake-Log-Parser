@@ -1,9 +1,10 @@
-require_relative 'game'
+require_relative 'classes/game'
 
 @games = []
 @player_names = []
 
-File.open("example1.txt", "r").each do |line|
+file = "tests/example1.txt"
+File.open(file, "r").each do |line|
   if line =~ /InitGame/
     @current_game = Game.new
   end
@@ -19,3 +20,5 @@ File.open("example1.txt", "r").each do |line|
   end
 
 end
+
+p @games
